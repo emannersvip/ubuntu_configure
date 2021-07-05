@@ -2,7 +2,9 @@
 #
 
 $homedir = '/home/emanners'
+$codedir = "$homedir/Code"
 
+file { "$homedir/Code":         ensure => directory, }
 file { "$homedir/Crypto":       ensure => directory, }
 file { "$homedir/Crypto/Chia":  ensure => directory, }
 
@@ -13,7 +15,9 @@ package { 'screen':  ensure => installed, }
 # https://forum.level1techs.com/t/how-to-reformat-520-byte-drives-to-512-bytes-usually/133021
 package { 'sg3-utils': ensure => installed, }
 package { 'smartmontools':  ensure => installed, }
-#--
+#--Miscellaneous files
+#
+#--Vim
 package { 'vim':  ensure => installed, }
 file { "$homedir/.vimrc":
   ensure        => present,
