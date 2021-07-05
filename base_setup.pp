@@ -1,7 +1,7 @@
 # Build New Ubuntu host 2021
 #
 
-$homedir = '/home/emanners'
+$homedir = "/home/$user"
 $codedir = "$homedir/Code"
 
 file { "$homedir/Code":         ensure => directory, }
