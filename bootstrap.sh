@@ -4,4 +4,4 @@
 
 apt -y install ssh puppet git
 
-puppet apply ThreeLeaf-4u.pp
+puppet apply base_setup.pp
