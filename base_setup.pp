@@ -1,12 +1,12 @@
 # Build New Ubuntu host 2021
 #
-
+$user    = 'emanners'
 $homedir = "/home/$user"
 $codedir = "$homedir/Code"
 
-file { "$homedir/Code":         ensure => directory, owner => $user, }
-file { "$homedir/Crypto":       ensure => directory, owner => $user, }
-file { "$homedir/Crypto/Chia":  ensure => directory, owner => $user, }
+file { "$homedir/Code":         ensure => directory, owner => $user, group => $user }
+file { "$homedir/Crypto":       ensure => directory, owner => $user, group => $user }
+file { "$homedir/Crypto/Chia":  ensure => directory, owner => $user, group => $user }
 
 #--
 package { 'htop':  ensure => installed, }
@@ -23,5 +23,6 @@ package { 'vim':  ensure => installed, }
 file { "$homedir/.vimrc":
   ensure        => present,
   owner         => $user,
+  group         => $user,
   content       => "colorscheme darkblue\nsyntax on",
 }
