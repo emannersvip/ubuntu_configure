@@ -11,6 +11,7 @@ file { "$homedir/Crypto/Chia":  ensure => directory, }
 #--
 package { 'htop':  ensure => installed, }
 package { 'iotop':  ensure => installed, }
+package { 'mlocate':  ensure => installed, }
 package { 'screen':  ensure => installed, }
 # https://forum.level1techs.com/t/how-to-reformat-520-byte-drives-to-512-bytes-usually/133021
 package { 'sg3-utils': ensure => installed, }
