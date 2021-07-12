@@ -7,7 +7,8 @@ $codedir = "$homedir/Code"
 file { "/btrfs":                ensure => directory, }
 file { "$homedir/Code":         ensure => directory, owner => $user, group => $user }
 file { "$homedir/Crypto":       ensure => directory, owner => $user, group => $user }
-file { "$homedir/Crypto/Chia":  ensure => directory, owner => $user, group => $user }
+file { "$homedir/Crypto/Chia":  ensure => directory, owner => $user, group => $user, require => "$homedir/Crypto" }
+file { "$homedir/Crypto/Chia/logs": ensure => link, target => "$homedir/.chia/mainnet/log", require => "$home/Crypto/Chia" }
 
 #--
 package { 'htop':  ensure => installed, }
